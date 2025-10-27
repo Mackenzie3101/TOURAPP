@@ -27,7 +27,7 @@ function Login() {
           <input
             type="email"
             placeholder="Email"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded no-icons"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -35,7 +35,7 @@ function Login() {
           <input
             type="password"
             placeholder="Password"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded no-icons"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
