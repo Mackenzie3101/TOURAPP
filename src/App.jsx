@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar.jsx";
 import Home from "./Components/Home.jsx";
 import Destinations from "./Components/Destination.jsx";
 import Login from "./Components/Login.jsx";
+import Signup from "./Components/Signup.jsx";
 import Footer from "./Components/Footer.jsx";
 
 export default function App() {
@@ -16,9 +17,10 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/destinations" element={<Destinations />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/footer" element={<Footer />} />
+            <Route path="/signup" element={<Signup />} />
           </Routes>
         </div>
+        <Footer />
       </div>
     </Router>
   );

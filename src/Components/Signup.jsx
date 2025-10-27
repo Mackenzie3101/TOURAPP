@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../Firebase";
 import { useNavigate, Link } from "react-router-dom";
 
-function Login() {
+function Signup() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleEmailLogin = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate("/");
+      await createUserWithEmailAndPassword(auth, email, password);
+      navigate("/login");
     } catch (err) {
       setError(err.message);
     }
@@ -22,8 +22,8 @@ function Login() {
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
       <div className="bg-white shadow-lg p-8 rounded-xl w-96">
-        <h2 className="text-2xl font-bold mb-4 text-center text-blue-600">Login</h2>
-        <form onSubmit={handleEmailLogin} className="space-y-4">
+        <h2 className="text-2xl font-bold mb-4 text-center text-blue-600">Sign Up</h2>
+        <form onSubmit={handleSignup} className="space-y-4">
           <input
             type="email"
             placeholder="Email"
@@ -41,14 +41,14 @@ function Login() {
             required
           />
           <button className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
-            Login
+            Create Account
           </button>
         </form>
         {error && <p className="text-red-600 text-sm mt-2">{error}</p>}
         <p className="text-center text-sm mt-4">
-          Don’t have an account?{" "}
-          <Link to="/signup" className="text-blue-600 underline">
-            Sign Up
+          Already have an account?{" "}
+          <Link to="/login" className="text-blue-600 underline">
+            Login
           </Link>
         </p>
       </div>
@@ -56,4 +56,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Signup;
