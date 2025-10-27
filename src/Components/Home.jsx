@@ -1,7 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Home() {
+function Home() {
   return (
     <div className="text-center py-16 px-4 bg-gradient-to-b from-blue-100 to-white">
       <h2 className="text-4xl font-bold text-blue-700 mb-4">
@@ -19,3 +18,4 @@ export default function Home() {
     </div>
   );
 }
+export default Home;

@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function DestinationCard({ destination }) {
+function DestinationCard({ destination }) {
   return (
     <div className="bg-white shadow-md rounded-xl overflow-hidden hover:scale-105 transition-transform">
       <img
@@ -15,3 +13,4 @@ export default function DestinationCard({ destination }) {
     </div>
   );
 }
+ export default DestinationCard;

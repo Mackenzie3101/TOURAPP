@@ -3,7 +3,7 @@ import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../../Firebase";
 import { useNavigate, Link } from "react-router-dom";
 
-export default function Login() {
+function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -62,3 +62,4 @@ export default function Login() {
     </div>
   );
 }
+export default Login;

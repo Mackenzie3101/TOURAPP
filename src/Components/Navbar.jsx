@@ -1,7 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+function Navbar() {
   return (
     <nav className="bg-white shadow-md p-4 flex justify-between items-center">
       <h1 className="text-2xl font-bold text-blue-600">Tour & Travel</h1>
@@ -13,3 +12,4 @@ export default function Navbar() {
     </nav>
   );
 }
+export default Navbar;

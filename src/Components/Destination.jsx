@@ -1,4 +1,3 @@
-import React from "react";
 import DestinationCard from "./DestinationCard";
 
 const destinations = [
@@ -19,7 +18,7 @@ const destinations = [
   },
 ];
 
-export default function Destinations() {
+function Destinations() {
   return (
     <div className="p-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {destinations.map((d, i) => (
@@ -28,3 +27,4 @@ export default function Destinations() {
     </div>
   );
 }
+ export default Destinations;

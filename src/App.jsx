@@ -5,6 +5,7 @@ import Home from "./Components/Home.jsx";
 import Destinations from "./Components/Destination.jsx";
 import Login from "./Components/Login.jsx";
 
+
 export default function App() {
   return (
     <Router>
@@ -15,6 +16,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/destinations" element={<Destinations />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/footer" element={<Footer />} />
           </Routes>
         </div>
       </div>
