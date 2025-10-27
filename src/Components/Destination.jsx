@@ -1,5 +1,5 @@
 import React from "react";
-import DestinationCard from "../Components/DestinationCard";
+import DestinationCard from "./DestinationCard";
 
 const destinations = [
   {
