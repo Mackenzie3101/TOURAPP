@@ -4,7 +4,7 @@ import Navbar from "./Components/Navbar.jsx";
 import Home from "./Components/Home.jsx";
 import Destinations from "./Components/Destination.jsx";
 import Login from "./Components/Login.jsx";
-
+import Footer from "./Components/Footer.jsx";
 
 export default function App() {
   return (
