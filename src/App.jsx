@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar.jsx";
 import Home from "./Components/Home.jsx";
@@ -7,6 +6,7 @@ import Login from "./Components/Login.jsx";
 import Signup from "./Components/Signup.jsx";
 import Footer from "./Components/Footer.jsx";
 import "./index.css";
+
 export default function App() {
   return (
     <Router>
