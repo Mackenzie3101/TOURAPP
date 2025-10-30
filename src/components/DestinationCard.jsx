@@ -1,16 +1,15 @@
 function DestinationCard({ destination }) {
   return (
-    <div className="bg-white shadow-md rounded-xl overflow-hidden hover:scale-105 transition-transform">
+    <div className="border rounded p-4 shadow">
       <img
         src={destination.image}
         alt={destination.name}
-        className="h-48 w-full object-cover"
+        className="w-full h-48 object-cover rounded"
       />
-      <div className="p-4">
-        <h3 className="font-semibold text-lg">{destination.name}</h3>
-        <p className="text-gray-600 text-sm">{destination.description}</p>
-      </div>
+      <h2 className="font-bold text-xl mt-2">{destination.name}</h2>
+      <p>{destination.description}</p>
     </div>
   );
 }
- export default DestinationCard;
+
+export default DestinationCard;
