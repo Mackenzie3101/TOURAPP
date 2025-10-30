@@ -11,5 +11,4 @@ function DestinationCard({ destination }) {
     </div>
   );
 }
-
 export default DestinationCard;

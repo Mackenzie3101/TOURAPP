@@ -1,41 +1,48 @@
-// src/App.jsx
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Destinations from "./pages/Destination";
+import Destinations from "./pages/Destinations";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Search from "./pages/Search"; // ✅ new page we’ll create next
-import ProtectedRoute from "./context/ProtectedRoute"; // ✅
+import Search from "./pages/Search";
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./context/ProtectedRoute";
 
-function App() {
+export default function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <div className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/search" element={<Search />} />
-            
-            {/* ✅ Protect destinations route */}
-            <Route
-              path="/destinations"
-              element={
-                <ProtectedRoute>
-                  <Destinations />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
+      <AuthProvider>
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <div className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              {/* 🔒 Protect these routes */}
+              <Route
+                path="/destinations"
+                element={
+                  <ProtectedRoute>
+                    <Destinations />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/search"
+                element={
+                  <ProtectedRoute>
+                    <Search />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </AuthProvider>
     </Router>
   );
 }
-
-export default App;
