@@ -1,30 +1,37 @@
-import React from "react";
+// src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Destinations from "./pages/Destination";
-import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import { auth } from "./Firebase"; // Ensure Firebase is imported if needed
+import Search from "./pages/Search"; // ✅ new page we’ll create next
+import ProtectedRoute from "./context/ProtectedRoute"; // ✅
 
 function App() {
   return (
     <Router>
-      {/* ⬇️ Wrap everything in a flex column that fills the screen height */}
-      <div className="flex flex-col min-h-screen">
+      <div className="min-h-screen flex flex-col">
         <Navbar />
-
-        {/* ⬇️ This makes the Routes area expand and push footer down */}
-        <main className="flex-grow">
+        <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/destinations" element={<Destinations />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/search" element={<Search />} />
+            
+            {/* ✅ Protect destinations route */}
+            <Route
+              path="/destinations"
+              element={
+                <ProtectedRoute>
+                  <Destinations />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
-        </main>
-
+        </div>
         <Footer />
       </div>
     </Router>
