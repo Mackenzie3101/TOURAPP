@@ -1,27 +1,26 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar.jsx";
-import Home from "./Components/Home.jsx";
-import Destinations from "./Components/Destination.jsx";
-import Login from "./Components/Login.jsx";
-import Signup from "./Components/Signup.jsx";
-import Footer from "./Components/Footer.jsx";
-import "./index.css";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Destinations from "./components/Destinations";
+import Footer from "./components/Footer";
+import Login from "./components/Auth/Login";
+import Signup from "./components/Auth/Signup";
+import { auth } from "./Firebase"; // Ensure Firebase is initialized  
 
-export default function App() {
+function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <div className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/destinations" element={<Destinations />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
-        </div>
-        <Footer />
-      </div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/destinations" element={<Destinations />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }
+
+export default App;
+

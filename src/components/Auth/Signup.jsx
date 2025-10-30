@@ -27,7 +27,7 @@ function Signup() {
           <input
             type="email"
             placeholder="Email"
-            className="w-full p-2 border rounded no-icons"  
+            className="w-full p-2 border rounded no-icons"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
