@@ -10,12 +10,12 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Firebase listener — runs whenever user signs in or out
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       setLoading(false);
     });
-    return () => unsubscribe(); // clean up listener
+
+    return () => unsubscribe();
   }, []);
 
   return (

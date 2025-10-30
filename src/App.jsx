@@ -1,25 +1,29 @@
-import React from "react";
+// src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Destinations from "./pages/Destinations";
+import Search from "./pages/Search";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Search from "./pages/Search";
-import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./context/ProtectedRoute";
+import { AuthProvider } from "./context/AuthContext";
 
-export default function App() {
+function App() {
   return (
-    <Router>
-      <AuthProvider>
-        <div className="min-h-screen flex flex-col">
+    <AuthProvider>
+      <Router>
+        {/* ✅ Full-page flex layout */}
+        <div className="flex flex-col min-h-screen">
           <Navbar />
-          <div className="flex-grow">
+
+          {/* ✅ Main content takes remaining height */}
+          <main className="flex-grow">
             <Routes>
               <Route path="/" element={<Home />} />
-              {/* 🔒 Protect these routes */}
+
+              {/* Restricted routes */}
               <Route
                 path="/destinations"
                 element={
@@ -36,13 +40,18 @@ export default function App() {
                   </ProtectedRoute>
                 }
               />
+
+              {/* Public routes */}
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
             </Routes>
-          </div>
+          </main>
+
           <Footer />
         </div>
-      </AuthProvider>
-    </Router>
+      </Router>
+    </AuthProvider>
   );
 }
+
+export default App;
