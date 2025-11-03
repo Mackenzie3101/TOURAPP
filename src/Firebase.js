@@ -4,12 +4,12 @@ import { getAuth } from "firebase/auth";
 
 // ✅ Replace these values with your actual Firebase credentials
 const firebaseConfig = {
-  apiKey: "AIzaSyDw4tOG1sJf4djYuOUoK2HmDh4ED2AU6w8",
-  authDomain: "tourapp-6581b.firebaseapp.com",
-  projectId: "tourapp-6581b",
-  storageBucket: "tourapp-6581b.appspot.com",
-  messagingSenderId: "1010809281560",
-  appId: "1:1010809281560:web:60e835b518a0f1d0a6776d",
+  apiKey: "AIzaSyD3nJIFNzpOx74ExdC-ScRjReVKz4xZ04w",
+  authDomain: "tour-and-travel-c7658.firebaseapp.com",
+  projectId: "tour-and-travel-c7658",
+  storageBucket: "tour-and-travel-c7658.firebasestorage.app",
+  messagingSenderId: "203242004391",
+  appId: "1:203242004391:web:740a585fe467923012e082",
 };
 
 // Initialize Firebase App

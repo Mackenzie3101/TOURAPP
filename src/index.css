@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-iframe[src^="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd"] {
+iframe[src^="chrome-extension://hdokiejnpimakedhajhdlcegeplioahd"]
+{
   display: none !important;
 }

@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { 
-  onAuthStateChanged, 
-  signOut, 
-  signInWithEmailAndPassword, 
-  createUserWithEmailAndPassword 
+import {
+  onAuthStateChanged,
+  signOut,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../src/Firebase";
 
@@ -25,8 +25,10 @@ export function AuthProvider({ children }) {
   }, []);
 
   // Auth functions
-  const login = (email, password) => signInWithEmailAndPassword(auth, email, password);
-  const signup = (email, password) => createUserWithEmailAndPassword(auth, email, password);
+  const login = (email, password) =>
+    signInWithEmailAndPassword(auth, email, password);
+  const signup = (email, password) =>
+    createUserWithEmailAndPassword(auth, email, password);
   const logout = () => signOut(auth);
 
   const value = { currentUser, login, signup, logout };

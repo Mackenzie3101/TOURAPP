@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Firebase";
 import { useNavigate, Link } from "react-router-dom";
+import travelbg from "../assets/images/log.jpg";
 
 function Login() {
   const navigate = useNavigate();
@@ -20,9 +21,12 @@ function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
+    <div className="relative text-center flex flex-col items-center justify-center h-screen px-4 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${travelbg})`}}>
       <div className="bg-white shadow-lg p-8 rounded-xl w-96">
-        <h2 className="text-2xl font-bold mb-4 text-center text-blue-600">Login</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center text-blue-600">
+          Login
+        </h2>
         <form onSubmit={handleEmailLogin} className="space-y-4">
           <input
             type="email"
